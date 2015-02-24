@@ -45,7 +45,7 @@ def start():
 def move():
     move = decide()
     data = bottle.request.json
-    global move
+
     print data['turn']
 
     return json.dumps({
