@@ -39,7 +39,7 @@ def start():
 @bottle.post('/move')
 def move():
     data = bottle.request.json
-    print data
+    print data['turn']
     circle()
     global current
 
