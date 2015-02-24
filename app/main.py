@@ -15,6 +15,16 @@ def circle():
 	elif current == 'up':
 		current = 'right'
 
+def move(num):
+	if num % 4 == 0:
+		return 'right';
+	elif num % 4 == 1:
+		return 'down';
+	elif num % 4 == 2:
+		return 'left';
+	elif num % 4 == 3:
+		return 'south';
+
 @bottle.get('/')
 def index():
     return """
@@ -40,12 +50,12 @@ def start():
 def move():
     data = bottle.request.json
     print data['turn']
-    circle()
+    move(data['turn'])
     global current
 
     return json.dumps({
-        'move': current,
-        'taunt': current
+        'move': move(data['turn']),
+        'taunt': move(data['turn'])
     })
 
 
