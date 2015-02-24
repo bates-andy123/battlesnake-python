@@ -1,6 +1,19 @@
 import bottle
 import json
 
+current = 'right'
+
+def circle():
+	global current
+
+	if current == 'right':
+		current = 'down'
+	elif current == 'down':
+		current = 'left'
+	elif current == 'left':
+		current = 'up'
+	elif current == 'up':
+		current = 'right'
 
 @bottle.get('/')
 def index():
@@ -26,10 +39,11 @@ def start():
 @bottle.post('/move')
 def move():
     data = bottle.request.json
-
+    circle()
+    global current
 
     return json.dumps({
-        'move': 'up',
+        'move': current,
         'taunt': 'New Taunt'
     })
 
