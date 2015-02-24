@@ -27,7 +27,7 @@ def index():
 @bottle.post('/start')
 def start():
     data = bottle.request.json
-    print data
+    
     return json.dumps({
         'name': 'battlesnake-python',
         'color': '#00ff00',
@@ -39,6 +39,7 @@ def start():
 @bottle.post('/move')
 def move():
     data = bottle.request.json
+    print data
     circle()
     global current
 
