@@ -42,7 +42,7 @@ def move():
 
     return json.dumps({
         'move': 'up',
-        'taunt': 'battlesnake-python!'
+        'taunt': 'New Taunt'
     })
 
 
