@@ -32,7 +32,7 @@ class decide:
 		print self.head
 
 
-move = None
+think = None
 
 @bottle.get('/')
 def index():
@@ -46,8 +46,8 @@ def index():
 @bottle.post('/start')
 def start():
     data = bottle.request.json
-    global move
-    move = decide(data['height'], data['width'])
+    global think
+    think = decide(data['height'], data['width'])
 
     return json.dumps({
         'name': 'battlesnake-python',
@@ -61,12 +61,12 @@ def start():
 def move():
     
     data = bottle.request.json
-    global move
+    global think
     print data['turn']
-    move.findPos(data['board'])
+    think.findPos(data['board'])
     return json.dumps({
-        'move': move.circle(data['turn']),
-        'taunt': move.circle(data['turn'])
+        'move': think.circle(data['turn']),
+        'taunt': think.circle(data['turn'])
     })
 
 
