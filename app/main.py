@@ -18,7 +18,7 @@ class decide:
 			return 'up' 
 
 
-move = decide()
+
 
 @bottle.get('/')
 def index():
@@ -43,8 +43,9 @@ def start():
 
 @bottle.post('/move')
 def move():
+    move = decide()
     data = bottle.request.json
-    global move
+
     print data['turn']
 
     return json.dumps({

@@ -9,16 +9,16 @@ class decide:
 
 	def circle(self, num):
 		if num % 4 == 0:
-			return 'right';
+			return 'right'
 		elif num % 4 == 1:
-			return 'down';
+			return 'down'
 		elif num % 4 == 2:
-			return 'left';
+			return 'left'
 		elif num % 4 == 3:
-			return 'up'; 
+			return 'up' 
 
 
-move = decide()
+
 
 @bottle.get('/')
 def index():
@@ -43,6 +43,7 @@ def start():
 
 @bottle.post('/move')
 def move():
+    move = decide()
     data = bottle.request.json
     global move
     print data['turn']
