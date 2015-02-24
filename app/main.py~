@@ -4,7 +4,7 @@ import json
 current = 'right'
 
 def circle():
-	if current == 'right':'
+	if current == 'right':
 		current = 'down'
 	elif current == 'down':
 		current = 'left'

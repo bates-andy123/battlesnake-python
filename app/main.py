@@ -41,7 +41,7 @@ def move():
 
 
     return json.dumps({
-        'move': current,
+        'move': 'up',
         'taunt': 'battlesnake-python!'
     })
 
