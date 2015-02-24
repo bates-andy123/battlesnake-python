@@ -7,6 +7,7 @@ class decide:
 	def __init__(self, height, width):
 		self.mHeight = height
 		self.mWidth = width
+		print "Class was created successfully, so no echoing hello world"
 
 	def circle(self, num):
 

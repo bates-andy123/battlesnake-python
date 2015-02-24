@@ -132,8 +132,8 @@ def move():
     print data['turn']
     
     return json.dumps({
-        'move': think.findDanger(data['board']),
-        'taunt': think.findDanger(data['board'])
+        'move': think.circle(data['turn']),
+        'taunt': think.circle(data['turn'])
     })
 
 
