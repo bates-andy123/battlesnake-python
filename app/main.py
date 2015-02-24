@@ -3,8 +3,8 @@ import json
 
 current = 'right'
 
-class decide():
-	def circle(num):
+class decide:
+	def circle(self, num):
 		if num % 4 == 0:
 			return 'right';
 		elif num % 4 == 1:

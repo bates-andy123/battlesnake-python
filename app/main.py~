@@ -3,17 +3,19 @@ import json
 
 current = 'right'
 
+class decide:
+	def circle(num):
+		if num % 4 == 0:
+			return 'right';
+		elif num % 4 == 1:
+			return 'down';
+		elif num % 4 == 2:
+			return 'left';
+		elif num % 4 == 3:
+			return 'up'; 
 
 
-def circle(num):
-	if num % 4 == 0:
-		return 'right';
-	elif num % 4 == 1:
-		return 'down';
-	elif num % 4 == 2:
-		return 'left';
-	elif num % 4 == 3:
-		return 'up';
+move = decide()
 
 @bottle.get('/')
 def index():
@@ -39,12 +41,12 @@ def start():
 @bottle.post('/move')
 def move():
     data = bottle.request.json
-   
+    global move
     print data['turn']
 
     return json.dumps({
-        'move': circle(data['turn']),
-        'taunt': circle(data['turn'])
+        'move': move.circle(data['turn']),
+        'taunt': move.circle(data['turn'])
     })
 
 
