@@ -4,8 +4,9 @@ import json
 current = 'right'
 
 class decide:
-	def __init__(self):
-		print 'class created'
+	def __init__(self, height, width):
+		self.mHeight = height
+		self.mWidth = width
 
 	def circle(self, num):
 		if num % 4 == 0:
@@ -33,11 +34,11 @@ def index():
 def start():
     data = bottle.request.json
     global move
-    move = decide()
+    move = decide(data['height'], data['width'])
 
     return json.dumps({
         'name': 'battlesnake-python',
-        'color': '#00ff00',
+        'color': 'red',
         'head_url': 'http://battlesnake-python.herokuapp.com',
         'taunt': 'battlesnake-python!'
     })
