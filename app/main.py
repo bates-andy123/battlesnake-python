@@ -50,7 +50,7 @@ def start():
     think = decide(data['height'], data['width'])
 
     return json.dumps({
-        'name': 'battlesnake-python',
+        'name': 'golden_hamster',
         'color': 'red',
         'head_url': 'http://battlesnake-python.herokuapp.com',
         'taunt': 'battlesnake-python!'
