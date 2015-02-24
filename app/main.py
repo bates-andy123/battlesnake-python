@@ -4,7 +4,7 @@ import json
 current = 'right'
 
 class decide:
-	def __init__(self, height, width):
+	def __init__(self):
 		print "Class was created successfully, so now echoing hello world"
 
 	def initialize(self, height, width):

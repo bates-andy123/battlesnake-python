@@ -7,7 +7,7 @@ class decide:
 	def __init__(self, height, width):
 		print "Class was created successfully, so now echoing hello world"
 
-	def initialize(self, height, width):
+	def initialize(self):
 		self.mHeight = height
 		self.mWidth = width
 
@@ -117,7 +117,7 @@ def index():
 def start():
     data = bottle.request.json
     global think
-    think = decide(data['height'], data['width'])
+    think.initialize(data['width'], data['height'])
 
     return json.dumps({
         'name': 'golden_hamster',
