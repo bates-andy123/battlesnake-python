@@ -3,17 +3,7 @@ import json
 
 current = 'right'
 
-def circle():
-	global current
 
-	if current == 'right':
-		current = 'down'
-	elif current == 'down':
-		current = 'left'
-	elif current == 'left':
-		current = 'up'
-	elif current == 'up':
-		current = 'right'
 
 def move(num):
 	if num % 4 == 0:
@@ -50,7 +40,7 @@ def start():
 def move():
     data = bottle.request.json
    
-    global current
+    print data['turn']
 
     return json.dumps({
         'move': move(data['turn']),

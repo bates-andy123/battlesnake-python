@@ -5,7 +5,7 @@ current = 'right'
 
 
 
-def move(num):
+def circle(num):
 	if num % 4 == 0:
 		return 'right';
 	elif num % 4 == 1:
@@ -43,8 +43,8 @@ def move():
     print data['turn']
 
     return json.dumps({
-        'move': move(data['turn']),
-        'taunt': move(data['turn'])
+        'move': circle(data['turn']),
+        'taunt': circle(data['turn'])
     })
 
 
