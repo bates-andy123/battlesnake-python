@@ -5,9 +5,11 @@ current = 'right'
 
 class decide:
 	def __init__(self, height, width):
+		print "Class was created successfully, so now echoing hello world"
+
+	def initialize(self, height, width):
 		self.mHeight = height
 		self.mWidth = width
-		print "Class was created successfully, so no echoing hello world"
 
 	def circle(self, num):
 
@@ -100,7 +102,7 @@ class decide:
 		return 'up'
 
 
-think = None
+think = decide()
 
 @bottle.get('/')
 def index():
@@ -115,7 +117,7 @@ def index():
 def start():
     data = bottle.request.json
     global think
-    think = decide(data['height'], data['width'])
+    think.initialize(data['width'], data['height'])
 
     return json.dumps({
         'name': 'golden_hamster',
