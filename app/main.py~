@@ -43,7 +43,7 @@ def move():
     global current
 
     return json.dumps({
-        'move': 'up',
+        'move': current,
         'taunt': 'New Taunt'
     })
 

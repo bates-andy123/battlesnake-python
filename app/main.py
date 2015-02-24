@@ -44,7 +44,7 @@ def move():
 
     return json.dumps({
         'move': current,
-        'taunt': 'New Taunt'
+        'taunt': current
     })
 
 
