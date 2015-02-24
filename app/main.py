@@ -37,17 +37,17 @@ class decide:
 	def isSafe(self, direction):
 		location = []
 		if(direction == "up"):
-			location.Append(self.head[0])
-			location.Append((self.head[1] - 1))
+			location.append(self.head[0])
+			location.append((self.head[1] - 1))
 		elif(direction == "down"):
-			location.Append(self.head[0])
-			location.Append((self.head[1] + 1))
+			location.append(self.head[0])
+			location.append((self.head[1] + 1))
 		elif(direction == "right"):
-			location.Append((self.head[0] + 1))
-			location.Append(self.head[1])
+			location.append((self.head[0] + 1))
+			location.append(self.head[1])
 		elif(direction == "left"):
-			location.Append((self.head[0] - 1))
-			location.Append(self.head[1])
+			location.append((self.head[0] - 1))
+			location.append(self.head[1])
 		if(location[0] < 0 or location[1] < 0):
 			return False
 		elif(location[0] > self.width - 1 or location[1] > self.height - 1):
