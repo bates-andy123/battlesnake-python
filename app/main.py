@@ -101,7 +101,8 @@ class decide:
 			return 'down'
 		return 'up'
 
-
+width = 10
+height = 10
 think = decide()
 
 @bottle.get('/')
@@ -117,6 +118,10 @@ def index():
 def start():
     data = bottle.request.json
     global think
+    global height
+    global width
+    print "The height is " + str(height)
+    print "The width is " + str(width)
     think.initialize(data['width'], data['height'])
 
     return json.dumps({
