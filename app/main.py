@@ -50,7 +50,7 @@ class decide:
 			location.append(self.head[1])
 		if(location[0] < 0 or location[1] < 0):
 			return False
-		elif(location[0] > self.width - 1 or location[1] > self.height - 1):
+		elif(location[0] > self.mWidth - 1 or location[1] > self.mHeight - 1):
 			return False
 		elif(self.board[location[0]][location[1]]['state'] == "head"):
 			return False
@@ -63,7 +63,7 @@ class decide:
 		return True
 
 	def findDanger(self, board):
-
+		self.board = board
 		self.findPos(board)
 		dirs = {'up': 0, 'down': 0, 'right': 0, 'left': 0}
 
