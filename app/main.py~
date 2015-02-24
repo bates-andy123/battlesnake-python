@@ -4,6 +4,9 @@ import json
 current = 'right'
 
 class decide:
+	def __init__(self):
+		print 'class created'
+
 	def circle(self, num):
 		if num % 4 == 0:
 			return 'right';

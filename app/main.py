@@ -4,18 +4,18 @@ import json
 current = 'right'
 
 class decide:
-	def: __init__(self):
+	def __init__(self):
 		print 'class created'
 
 	def circle(self, num):
 		if num % 4 == 0:
-			return 'right';
+			return 'right'
 		elif num % 4 == 1:
-			return 'down';
+			return 'down'
 		elif num % 4 == 2:
-			return 'left';
+			return 'left'
 		elif num % 4 == 3:
-			return 'up'; 
+			return 'up' 
 
 
 move = decide()
