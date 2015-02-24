@@ -23,7 +23,7 @@ def move(num):
 	elif num % 4 == 2:
 		return 'left';
 	elif num % 4 == 3:
-		return 'south';
+		return 'up';
 
 @bottle.get('/')
 def index():
@@ -49,13 +49,12 @@ def start():
 @bottle.post('/move')
 def move():
     data = bottle.request.json
-    print data['turn']
-    move(data['turn'])
+   
     global current
 
     return json.dumps({
-        'move': current,
-        'taunt': current
+        'move': move(data['turn']),
+        'taunt': move(data['turn'])
     })
 
 
