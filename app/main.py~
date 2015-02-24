@@ -31,13 +31,15 @@ class decide:
 			xdex += 1
 		print self.head
 
-	def findDanger(self):
+	def findDanger(self, board):
+
+		self.findPos(board)
 		dirs = {'up': 0, 'down': 0, 'right': 0, 'left': 0}
 
 		xdex =0
 		ydex= 0
 
-		for x in self.board:
+		for x in board:
 			ydex = 0
 			for y in x:
 				if y['state'] == 'snake':
