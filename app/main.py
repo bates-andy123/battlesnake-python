@@ -52,7 +52,7 @@ def start():
     return json.dumps({
         'name': 'golden_hamster',
         'color': 'red',
-        'head_url': 'http://battlesnake-python.herokuapp.com',
+        'head_url': 'https://peaceandpeanutbutterdotcom.files.wordpress.com/2013/08/smiley-face.jpg',
         'taunt': 'battlesnake-python!'
     })
 

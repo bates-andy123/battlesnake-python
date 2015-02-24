@@ -26,7 +26,7 @@ class decide:
 			ydex = 0
 			for y in x:
 				if y['state'] == 'head' and y['snake'] == 'golden_hamster':
-					self.head = [xdec, ydex]
+					self.head = [xdex, ydex]
 				ydex += 1
 			xdex += 1
 		print self.head
