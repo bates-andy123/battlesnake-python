@@ -82,19 +82,19 @@ class decide:
 				ydex += 1	
 			xdex += 1
 
-		if (dirs['up']) > dirs['down'] and (dirs['up']) > dirs['right'] and (dirs['up']) > dirs['left'] and isSafe('up'):
+		if (dirs['up']) > dirs['down'] and (dirs['up']) > dirs['right'] and (dirs['up']) > dirs['left'] and self.isSafe('up'):
 			return 'up'
-		if (dirs['down']) > dirs['up'] and (dirs['down']) > dirs['right'] and (dirs['down']) > dirs['left'] and isSafe('down'):
+		if (dirs['down']) > dirs['up'] and (dirs['down']) > dirs['right'] and (dirs['down']) > dirs['left'] and self.isSafe('down'):
 			return 'down'
-		if (dirs['right'] > dirs['up']) and (dirs['right'] > dirs['down']) and (dirs['right']) > dirs['left'] and isSafe('right'):
+		if (dirs['right'] > dirs['up']) and (dirs['right'] > dirs['down']) and (dirs['right']) > dirs['left'] and self.isSafe('right'):
 			return 'right'
-		if (dirs['left'] > dirs['up']) and (dirs['left'] > dirs['down']) and (dirs['left'] > dirs['right']) and isSafe('left'):
+		if (dirs['left'] > dirs['up']) and (dirs['left'] > dirs['down']) and (dirs['left'] > dirs['right']) and self.isSafe('left'):
 			return 'left'
-		if(isSafe('right')):		
+		if(self.isSafe('right')):		
 			return 'right'
-		if(isSafe('left')):
+		if(self.isSafe('left')):
 			return 'left'
-		if(isSafe('down')):
+		if(self.isSafe('down')):
 			return 'down'
 		return 'up'
 

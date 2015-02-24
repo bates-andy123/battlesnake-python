@@ -31,6 +31,34 @@ class decide:
 			xdex += 1
 		print self.head
 
+	def isSafe(self, direction):
+		location = []
+		if(direction == "up"):
+			location.Append(self.head[0])
+			location.Append((self.head[1] - 1))
+		elif(direction == "down"):
+			location.Append(self.head[0])
+			location.Append((self.head[1] + 1))
+		elif(direction == "right"):
+			location.Append((self.head[0] + 1))
+			location.Append(self.head[1])
+		elif(direction == "left"):
+			location.Append((self.head[0] - 1))
+			location.Append(self.head[1])
+		if(location[0] < 0 or location[1] < 0):
+			return False
+		elif(location[0] > self.width - 1 or location[1] > self.height - 1):
+			return False
+		elif(self.board[location[0]][location[1]]['state'] == "head"):
+			return False
+		elif(self.board[location[0]][location[1]]['state'] == "body"):
+			return False
+		elif(self.board[location[0]][location[1]]['state'] == "food"):
+			return True
+		elif(self.board[location[0]][location[1]]['state'] == "empy"):
+			return True
+		return True
+
 	def findDanger(self, board):
 
 		self.findPos(board)
