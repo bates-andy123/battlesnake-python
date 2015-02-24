@@ -9,8 +9,7 @@ class decide:
 		self.mWidth = width
 
 	def circle(self, num):
-		print self.mHeight
-		print self.mWidth
+
 		if num % 4 == 0:
 			return 'right'
 		elif num % 4 == 1:
@@ -19,6 +18,18 @@ class decide:
 			return 'left'
 		elif num % 4 == 3:
 			return 'up' 
+	
+	def findPos(self, board):
+		xdex =0
+		ydex= 0
+		for x in board:
+			ydex = 0
+			for y in x:
+				if y['state'] == 'head' and y['snake'] == 'golden_hamster':
+					self.head = [xdec, ydex]
+				ydex += 1
+			xdex += 1
+		print self.head
 
 
 move = None
@@ -52,7 +63,7 @@ def move():
     data = bottle.request.json
     global move
     print data['turn']
-
+    move.findPos(data['board'])
     return json.dumps({
         'move': move.circle(data['turn']),
         'taunt': move.circle(data['turn'])
