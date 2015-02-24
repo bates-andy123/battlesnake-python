@@ -37,7 +37,7 @@ def start():
 
     return json.dumps({
         'name': 'battlesnake-python',
-        'color': '#00ff00',
+        'color': 'red',
         'head_url': 'http://battlesnake-python.herokuapp.com',
         'taunt': 'battlesnake-python!'
     })
