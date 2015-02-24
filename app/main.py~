@@ -18,7 +18,7 @@ class decide:
 			return 'up' 
 
 
-
+move = None
 
 @bottle.get('/')
 def index():
@@ -33,6 +33,8 @@ def index():
 def start():
     data = bottle.request.json
     
+    move = decide()
+
     return json.dumps({
         'name': 'battlesnake-python',
         'color': '#00ff00',
@@ -43,7 +45,7 @@ def start():
 
 @bottle.post('/move')
 def move():
-    move = decide()
+    
     data = bottle.request.json
 
     print data['turn']
