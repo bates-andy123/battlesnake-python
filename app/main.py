@@ -31,6 +31,45 @@ class decide:
 			xdex += 1
 		print self.head
 
+	def findDanger(self, board):
+
+		self.findPos(board)
+		dirs = {'up': 0, 'down': 0, 'right': 0, 'left': 0}
+
+		xdex =0
+		ydex= 0
+
+		for x in board:
+			ydex = 0
+			for y in x:
+				if y['state'] == 'snake':
+					if(ydex < self.head[1] ):
+						dirs['up'] += 1
+					elif(ydex > self.head[1]):
+						dirs['down'] += 1;
+					if(xdex < self.head[0] ):
+						dirs['left'] += 1
+					elif(xdex > self.head[0]):
+						dirs['right'] += 1;
+				ydex += 1	
+			xdex += 1
+
+		if (dirs['up']) > dirs['down'] and (dirs['up']) > dirs['right'] and (dirs['up']) > dirs['left'] and isSafe('up'):
+			return 'up'
+		if (dirs['down']) > dirs['up'] and (dirs['down']) > dirs['right'] and (dirs['down']) > dirs['left'] and isSafe('down'):
+			return 'down'
+		if (dirs['right'] > dirs['up']) and (dirs['right'] > dirs['down']) and (dirs['right']) > dirs['left'] and isSafe('right'):
+			return 'right'
+		if (dirs['left'] > dirs['up']) and (dirs['left'] > dirs['down']) and (dirs['left'] > dirs['right']) and isSafe('left'):
+			return 'left'
+		if(isSafe('right')):		
+			return 'right'
+		if(isSafe('left')):
+			return 'left'
+		if(isSafe('down')):
+			return 'down'
+		return 'up'
+
 
 think = None
 
