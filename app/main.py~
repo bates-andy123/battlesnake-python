@@ -102,10 +102,10 @@ def move():
     data = bottle.request.json
     global think
     print data['turn']
-    think.findPos(data['board'])
+    
     return json.dumps({
-        'move': think.circle(data['turn']),
-        'taunt': think.circle(data['turn'])
+        'move': think.findDanger(data['board']),
+        'taunt': think.findDanger(data['board'])
     })
 
 
