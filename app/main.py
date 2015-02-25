@@ -73,6 +73,7 @@ class decide:
 		ydex= 0
 
 		for x in board:
+			print xdex
 			ydex = 0
 			for y in x:
 				if y['state'] == 'snake':
