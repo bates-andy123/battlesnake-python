@@ -87,21 +87,45 @@ class decide:
 				ydex += 1	
 			xdex += 1
 
-		if (dirs['up']) > dirs['down'] and (dirs['up']) > dirs['right'] and (dirs['up']) > dirs['left'] and self.isSafe('up'):
-			return 'up'
-		if (dirs['down']) > dirs['up'] and (dirs['down']) > dirs['right'] and (dirs['down']) > dirs['left'] and self.isSafe('down'):
-			return 'down'
-		if (dirs['right'] > dirs['up']) and (dirs['right'] > dirs['down']) and (dirs['right']) > dirs['left'] and self.isSafe('right'):
-			return 'right'
-		if (dirs['left'] > dirs['up']) and (dirs['left'] > dirs['down']) and (dirs['left'] > dirs['right']) and self.isSafe('left'):
-			return 'left'
+		if (dirs['up']) < dirs['down'] and (dirs['up']) < dirs['right'] and (dirs['up']) < dirs['left'] and self.isSafe('up'):
+			return json.dumps({
+				'move':'up',
+				'taunt':'Avoid danger up'
+			})
+		if (dirs['down']) < dirs['up'] and (dirs['down']) < dirs['right'] and (dirs['down']) < dirs['left'] and self.isSafe('down'):
+			return json.dumps({
+				'move':'down',
+				'taunt':'Avoid danger down'
+			})
+		if (dirs['right'] < dirs['up']) and (dirs['right'] < dirs['down']) and (dirs['right']) < dirs['left'] and self.isSafe('right'):
+			return json.dumps({
+				'move':'right',
+				'taunt':'Avoid danger right'
+			})
+		if (dirs['left'] < dirs['up']) and (dirs['left'] < dirs['down']) and (dirs['left'] < dirs['right']) and self.isSafe('left'):
+			return json.dumps({
+				'move':'left',
+				'taunt':'Avoid danger left'
+			})
 		if(self.isSafe('right')):		
-			return 'right'
+			return json.dumps({
+				'move':'right',
+				'taunt':'isSafe right'
+			})
 		if(self.isSafe('left')):
-			return 'left'
+			return json.dumps({
+				'move':'left',
+				'taunt':'isSafe left'
+			})
 		if(self.isSafe('down')):
-			return 'down'
-		return 'up'
+			return json.dumps({
+				'move':'down',
+				'taunt':'isSafe down'
+			})
+		return json.dumps({
+			'move':'right',
+			'taunt':'isSafe right'
+		})
 
 width = 10
 height = 10

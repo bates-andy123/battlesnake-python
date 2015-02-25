@@ -88,20 +88,44 @@ class decide:
 			xdex += 1
 
 		if (dirs['up']) < dirs['down'] and (dirs['up']) < dirs['right'] and (dirs['up']) < dirs['left'] and self.isSafe('up'):
-			return 'up'
+			return json.dumps({
+				'move':'up',
+				'taunt':'Avoid danger up'
+			})
 		if (dirs['down']) < dirs['up'] and (dirs['down']) < dirs['right'] and (dirs['down']) < dirs['left'] and self.isSafe('down'):
-			return 'down'
+			return json.dumps({
+				'move':'down',
+				'taunt':'Avoid danger down'
+			})
 		if (dirs['right'] < dirs['up']) and (dirs['right'] < dirs['down']) and (dirs['right']) < dirs['left'] and self.isSafe('right'):
-			return 'right'
+			return json.dumps({
+				'move':'right',
+				'taunt':'Avoid danger right'
+			})
 		if (dirs['left'] < dirs['up']) and (dirs['left'] < dirs['down']) and (dirs['left'] < dirs['right']) and self.isSafe('left'):
-			return 'left'
+			return json.dumps({
+				'move':'left',
+				'taunt':'Avoid danger left'
+			})
 		if(self.isSafe('right')):		
-			return 'right'
+			return json.dumps({
+				'move':'right',
+				'taunt':'isSafe right'
+			})
 		if(self.isSafe('left')):
-			return 'left'
+			return json.dumps({
+				'move':'left',
+				'taunt':'isSafe left'
+			})
 		if(self.isSafe('down')):
-			return 'down'
-		return 'up'
+			return json.dumps({
+				'move':'down',
+				'taunt':'isSafe down'
+			})
+		return json.dumps({
+			'move':'right',
+			'taunt':'isSafe right'
+		})
 
 width = 10
 height = 10
@@ -141,10 +165,7 @@ def move():
     global think
     
     think.setBoard(len(data["board"]),len(data["board"][0]))
-    return json.dumps({
-        'move': think.findDanger(data['board']),
-        'taunt': think.findDanger(data['board'])
-    })
+    return think.findDanger(data['board'])
 
 
 @bottle.post('/end')
