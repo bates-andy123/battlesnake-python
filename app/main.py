@@ -3,7 +3,6 @@ import json
 
 current = 'right'
 
-<<<<<<< HEAD
 class decide:
 	def __init__(self):
 		print "Class was created successfully, so now echoing hello world"
@@ -105,17 +104,6 @@ class decide:
 width = 10
 height = 10
 think = decide()
-=======
-def circle():
-	if current == 'right':
-		current = 'down'
-	elif current == 'down':
-		current = 'left'
-	elif current == 'left':
-		current = 'up'
-	elif current == 'up':
-		current = 'right'
->>>>>>> 32b04e9d1765adf36ac06660856a438071017dc2
 
 @bottle.get('/')
 def index():
@@ -152,13 +140,8 @@ def move():
     print data['turn']
     
     return json.dumps({
-<<<<<<< HEAD
         'move': think.findDanger(data['board']),
         'taunt': think.findDanger(data['board'])
-=======
-        'move': 'left',
-        'taunt': 'battlesnake-python!'
->>>>>>> 32b04e9d1765adf36ac06660856a438071017dc2
     })
 
 
