@@ -30,7 +30,7 @@ class decide:
 					self.head = [xdex, ydex]
 				ydex += 1
 			xdex += 1
-		print self.head
+		
 
 	def setBoard(self, width, height):
 		self.mWidth = width
@@ -87,13 +87,13 @@ class decide:
 				ydex += 1	
 			xdex += 1
 
-		if (dirs['up']) > dirs['down'] and (dirs['up']) > dirs['right'] and (dirs['up']) > dirs['left'] and self.isSafe('up'):
+		if (dirs['up']) < dirs['down'] and (dirs['up']) < dirs['right'] and (dirs['up']) < dirs['left'] and self.isSafe('up'):
 			return 'up'
-		if (dirs['down']) > dirs['up'] and (dirs['down']) > dirs['right'] and (dirs['down']) > dirs['left'] and self.isSafe('down'):
+		if (dirs['down']) < dirs['up'] and (dirs['down']) < dirs['right'] and (dirs['down']) < dirs['left'] and self.isSafe('down'):
 			return 'down'
-		if (dirs['right'] > dirs['up']) and (dirs['right'] > dirs['down']) and (dirs['right']) > dirs['left'] and self.isSafe('right'):
+		if (dirs['right'] < dirs['up']) and (dirs['right'] < dirs['down']) and (dirs['right']) < dirs['left'] and self.isSafe('right'):
 			return 'right'
-		if (dirs['left'] > dirs['up']) and (dirs['left'] > dirs['down']) and (dirs['left'] > dirs['right']) and self.isSafe('left'):
+		if (dirs['left'] < dirs['up']) and (dirs['left'] < dirs['down']) and (dirs['left'] < dirs['right']) and self.isSafe('left'):
 			return 'left'
 		if(self.isSafe('right')):		
 			return 'right'
@@ -139,7 +139,7 @@ def move():
     
     data = bottle.request.json
     global think
-    print data['turn']
+    
     think.setBoard(len(data["board"]),len(data["board"][0]))
     return json.dumps({
         'move': think.findDanger(data['board']),
