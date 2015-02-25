@@ -1,8 +1,6 @@
 import bottle
 import json
 
-current = 'right'
-
 class decide:
 	def __init__(self):
 		print "Class was created successfully, so now echoing hello world"
@@ -33,6 +31,10 @@ class decide:
 				ydex += 1
 			xdex += 1
 		print self.head
+
+	def setBoard(self, width, height):
+		self.mWidth = width
+		self.mHeight = height
 
 	def isSafe(self, direction):
 		location = []

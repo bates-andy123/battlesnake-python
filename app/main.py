@@ -32,6 +32,10 @@ class decide:
 			xdex += 1
 		print self.head
 
+	def setBoard(self, width, height):
+		self.mWidth = width
+		self.mHeight = height
+
 	def isSafe(self, direction):
 		location = []
 		if(direction == "up"):
@@ -136,7 +140,7 @@ def move():
     data = bottle.request.json
     global think
     print data['turn']
-    
+    think.setBoard(len(data["board"]),len(data["board"][0]))
     return json.dumps({
         'move': think.findDanger(data['board']),
         'taunt': think.findDanger(data['board'])
