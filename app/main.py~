@@ -75,6 +75,7 @@ class decide:
 		for x in board:
 			ydex = 0
 			for y in x:
+				print ydex
 				if y['state'] == 'snake':
 					if(ydex < self.head[1] ):
 						dirs['up'] += 1
