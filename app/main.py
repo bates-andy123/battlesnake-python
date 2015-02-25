@@ -86,7 +86,7 @@ class decide:
 						dirs['right'] += 1;
 				ydex += 1	
 			xdex += 1
-
+		print dirs
 		if (dirs['up']) < dirs['down'] and (dirs['up']) < dirs['right'] and (dirs['up']) < dirs['left'] and self.isSafe('up'):
 			return json.dumps({
 				'move':'up',

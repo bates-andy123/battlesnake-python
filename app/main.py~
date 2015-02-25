@@ -165,10 +165,7 @@ def move():
     global think
     
     think.setBoard(len(data["board"]),len(data["board"][0]))
-    return json.dumps({
-        'move': think.findDanger(data['board']),
-        'taunt': think.findDanger(data['board'])
-    })
+    return think.findDanger(data['board'])
 
 
 @bottle.post('/end')
