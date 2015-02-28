@@ -10,6 +10,7 @@ class decide(object):
 	def initialize(self, height, width):
 		self.mHeight = height
 		self.mWidth = width
+		print "Just intialized, w: ", self.mWidth, " h: ", self.mHeight
 
 	def circle(self, num):
 
