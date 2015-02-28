@@ -7,8 +7,8 @@ class food(object):
 		closet = [0, 0]
 		shortDist = 0 #can't actually equal zero
 		for food in self.mFood:
-			dist = abs(mHead[0] - food[0])
-			dist += abs(mHead[1] - food[1])
+			dist = abs(self.mHead[0] - food[0])
+			dist += abs(self.mHead[1] - food[1])
 			if(dist < shortDist or shortDist == 0):
 				shortDist = dist
 				closet = food
