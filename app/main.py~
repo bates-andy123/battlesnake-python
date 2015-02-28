@@ -39,6 +39,14 @@ class decide(object):
 		self.mWidth = width
 		self.mHeight = height
 
+	def init(self, data):
+		self.mBoard = data['board']
+		self.mTurn = data['turn']
+		self.mSnakes = data['snakes']
+		self.mFood = food['food']
+		self.mWidth = len(data["board"])
+		self.mHeight = len(data["board"][0])
+
 	def isSafe(self, direction):
 		location = []
 		if(direction == "up"):
@@ -57,18 +65,19 @@ class decide(object):
 			return False
 		elif(location[0] > self.mWidth - 1 or location[1] > self.mHeight - 1):
 			return False
-		elif(self.board[location[0]][location[1]]['state'] == "head"):
+		elif(self.mBoard[location[0]][location[1]]['state'] == "head"):
 			return False
-		elif(self.board[location[0]][location[1]]['state'] == "body"):
+		elif(self.mBoard[location[0]][location[1]]['state'] == "body"):
 			return False
-		elif(self.board[location[0]][location[1]]['state'] == "food"):
+		elif(self.mBoard[location[0]][location[1]]['state'] == "food"):
 			return True
-		elif(self.board[location[0]][location[1]]['state'] == "empy"):
+		elif(self.mBoard[location[0]][location[1]]['state'] == "empy"):
 			return True
 		return True
 
+		
+
 	def findDanger(self, board):
-		self.board = board
 		self.findPos(board)
 		dirs = {'up': 0, 'down': 0, 'right': 0, 'left': 0}
 
@@ -167,9 +176,9 @@ def move():
     
     data = bottle.request.json
     global think
-    print think.mWidth, " ", think.mHeight
-    print id(think)
-    think.setBoard(len(data["board"]),len(data["board"][0]))
+   
+    think.init(data[]len(data["board"]),len(data["board"][0]))
+
     return think.findDanger(data['board'])
 
 
