@@ -43,7 +43,7 @@ class decide(object):
 		self.mBoard = data['board']
 		self.mTurn = data['turn']
 		self.mSnakes = data['snakes']
-		self.mFood = food['food']
+		self.mFood = data['food']
 		self.mWidth = len(data["board"])
 		self.mHeight = len(data["board"][0])
 

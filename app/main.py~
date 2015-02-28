@@ -177,7 +177,7 @@ def move():
     data = bottle.request.json
     global think
    
-    think.init(data[]len(data["board"]),len(data["board"][0]))
+    think.init(data)
 
     return think.findDanger(data['board'])
 
