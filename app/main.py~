@@ -184,7 +184,7 @@ def move():
     global think
    
     think.init(data)
-
+    think.pratice()
     return think.findDanger(data['board'])
 
 
