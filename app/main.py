@@ -3,7 +3,7 @@ import json
 
 print "Script start"
 
-class decide:
+class decide(object):
 	def __init__(self):
 		print "Class was created successfully, so now echoing hello world"
 
