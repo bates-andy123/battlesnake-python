@@ -31,7 +31,7 @@ class decide(object):
 			ydex = 0
 			for y in x:
 				if y['state'] == 'head' and y['snake'] == 'golden_hamster':
-					self.head = [xdex, ydex]
+					self.mHead = [xdex, ydex]
 				ydex += 1
 			xdex += 1
 		
@@ -56,17 +56,17 @@ class decide(object):
 	def isSafe(self, direction):
 		location = []
 		if(direction == "up"):
-			location.append(self.head[0])
-			location.append((self.head[1] - 1))
+			location.append(self.mHead[0])
+			location.append((self.mHead[1] - 1))
 		elif(direction == "down"):
-			location.append(self.head[0])
-			location.append((self.head[1] + 1))
+			location.append(self.mHead[0])
+			location.append((self.mHead[1] + 1))
 		elif(direction == "right"):
-			location.append((self.head[0] + 1))
-			location.append(self.head[1])
+			location.append((self.mHead[0] + 1))
+			location.append(self.mHead[1])
 		elif(direction == "left"):
-			location.append((self.head[0] - 1))
-			location.append(self.head[1])
+			location.append((self.mHead[0] - 1))
+			location.append(self.mHead[1])
 		if(location[0] < 0 or location[1] < 0):
 			return False
 		elif(location[0] > self.mWidth - 1 or location[1] > self.mHeight - 1):
@@ -94,13 +94,13 @@ class decide(object):
 			ydex = 0
 			for y in x:
 				if y['state'] == 'body' or  y['state'] == 'head':
-					if(ydex < self.head[1] ):
+					if(ydex < self.mHead[1] ):
 						dirs['up'] += 1
-					elif(ydex > self.head[1]):
+					elif(ydex > self.mHead[1]):
 						dirs['down'] += 1;
-					if(xdex < self.head[0] ):
+					if(xdex < self.mHead[0] ):
 						dirs['left'] += 1
-					elif(xdex > self.head[0]):
+					elif(xdex > self.mHead[0]):
 						dirs['right'] += 1;
 				ydex += 1	
 			xdex += 1
