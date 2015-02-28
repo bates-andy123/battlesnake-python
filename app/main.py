@@ -148,6 +148,7 @@ def start():
     global think
     global height
     global width
+    print type(think)
     print "The height is " + str(height)
     print "The width is " + str(width)
     think.initialize(data['width'], data['height'])

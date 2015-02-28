@@ -1,6 +1,8 @@
 import bottle
 import json
 
+print "Script start"
+
 class decide:
 	def __init__(self):
 		print "Class was created successfully, so now echoing hello world"
