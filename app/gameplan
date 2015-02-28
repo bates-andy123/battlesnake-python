@@ -1,0 +1,23 @@
+Structure Ideas
+
+The perfect Snake:
+
+Can dectect immeadiate danger
+Position itself in the most open spot
+devours food while always moving to the most open spot
+
+Make the snake so that it can:
+
+Dectect danger
+Find food
+Follow the edge of the board
+
+
+Find Food:
+
+A class that finds food in numerous ways
+
+The closet food on the map. 
+The closet food in a box
+The max number of food that can be obtained in a number of turns for every snake
+The closet food in safe zones

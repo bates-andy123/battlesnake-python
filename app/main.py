@@ -1,5 +1,6 @@
 import bottle
 import json
+import food
 
 print "Script start"
 
@@ -23,10 +24,10 @@ class decide(object):
 		elif num % 4 == 3:
 			return 'up' 
 	
-	def findPos(self, board):
+	def findPos(self):
 		xdex =0
 		ydex= 0
-		for x in board:
+		for x in self.mBoard:
 			ydex = 0
 			for y in x:
 				if y['state'] == 'head' and y['snake'] == 'golden_hamster':
@@ -46,6 +47,11 @@ class decide(object):
 		self.mFood = data['food']
 		self.mWidth = len(data["board"])
 		self.mHeight = len(data["board"][0])
+		self.mData = data #To simpfly the passing to other objects
+		self.findPos()
+
+	def pratice(self):
+		foodCalc = food(self.mData, self.mHead)
 
 	def isSafe(self, direction):
 		location = []
@@ -178,7 +184,7 @@ def move():
     global think
    
     think.init(data)
-
+    think.pratice()
     return think.findDanger(data['board'])
 
 
