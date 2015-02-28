@@ -166,7 +166,7 @@ def move():
     
     data = bottle.request.json
     global think
-    
+    print think.mWidth, " ", think.mHeight
     think.setBoard(len(data["board"]),len(data["board"][0]))
     return think.findDanger(data['board'])
 

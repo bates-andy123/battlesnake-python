@@ -3,7 +3,7 @@ import json
 
 print "Script start"
 
-class decide:
+class decide(object):
 	def __init__(self):
 		print "Class was created successfully, so now echoing hello world"
 
@@ -166,7 +166,7 @@ def move():
     
     data = bottle.request.json
     global think
-    
+    print think.mWidth, " ", think.mHeight
     think.setBoard(len(data["board"]),len(data["board"][0]))
     return think.findDanger(data['board'])
 
