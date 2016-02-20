@@ -2,6 +2,7 @@ import bottle
 import json
 import food
 
+"""
 print "Script start"
 
 class decide(object):
@@ -146,6 +147,9 @@ class decide(object):
 			'taunt':'isSafe right'
 		})
 
+"""
+
+
 width = 10
 height = 10
 think = decide()
@@ -168,12 +172,12 @@ def start():
     print type(think)
     print "The height is " + str(height)
     print "The width is " + str(width)
-    think.initialize(data['width'], data['height'])
+    #think.initialize(data['width'], data['height'])
 
     return json.dumps({
         'name': 'golden_hamster',
         'color': 'red',
-        'head_url': 'https://peaceandpeanutbutterdotcom.files.wordpress.com/2013/08/smiley-face.jpg',
+        'head': 'http://cdn3.whatculture.com/wp-content/uploads/2015/05/john-cena-heel-turn-600x300.jpg',
         'taunt': 'battlesnake-python!'
     })
 
@@ -185,10 +189,13 @@ def move():
     global think
    
     print data
-
+    """
     think.init(data)
     think.pratice()
     return think.findDanger(data['board'])
+    """
+
+    return
 
 
 @bottle.post('/end')
