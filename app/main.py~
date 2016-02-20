@@ -52,6 +52,7 @@ class decide(object):
 
 	def pratice(self):
 		foodCalc = food.food(self.mData, self.mHead)
+		print foodCalc.findClosetFood()
 
 	def isSafe(self, direction):
 		location = []
