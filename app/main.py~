@@ -1,59 +1,60 @@
 import bottle
-import json
+import os
 
-width = 10
-height = 10
+
+@bottle.route('/static/<path:path>')
+def static(path):
+    return bottle.static_file(path, root='static/')
+
 
 @bottle.get('/')
 def index():
-    return """
-        <a href="https://github.com/sendwithus/battlesnake-python">
-            battlesnake-python
-        </a>
-    """
+    head_url = '%s://%s/static/head.png' % (
+        bottle.request.urlparts.scheme,
+        bottle.request.urlparts.netloc
+    )
+
+    return {
+        'color': '#00ff00',
+        'head': head_url
+    }
 
 
 @bottle.post('/start')
 def start():
     data = bottle.request.json
-    global think
-    global height
-    global width
-    print type(think)
-    print "The height is " + str(height)
-    print "The width is " + str(width)
-    #think.initialize(data['width'], data['height'])
 
-    return json.dumps({
-        'name': 'golden_hamster',
-        'color': 'red',
-        'head_url': 'http://cdn3.whatculture.com/wp-content/uploads/2015/05/john-cena-heel-turn-600x300.jpg',
+    # TODO: Do things with data
+
+    return {
         'taunt': 'battlesnake-python!'
-    })
+    }
 
 
 @bottle.post('/move')
 def move():
-    
     data = bottle.request.json
-    global think
-   
-    print data
-    """
-    think.init(data)
-    think.pratice()
-    return think.findDanger(data['board'])
-    """
 
-    return
+    # TODO: Do things with data
+
+    return {
+        'move': 'north',
+        'taunt': 'battlesnake-python!'
+    }
 
 
 @bottle.post('/end')
 def end():
     data = bottle.request.json
 
-    return json.dumps({})
+    # TODO: Do things with data
+
+    return {
+        'taunt': 'battlesnake-python!'
+    }
 
 
-# Expose WSGI app
+# Expose WSGI app (so gunicorn can find it)
 application = bottle.default_app()
+if __name__ == '__main__':
+    bottle.run(application, host=os.getenv('IP', '0.0.0.0'), port=os.getenv('PORT', '8080'))
