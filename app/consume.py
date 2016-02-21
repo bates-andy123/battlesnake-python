@@ -1,6 +1,6 @@
 def food70( gameData):
   foodScanMax = 2
-  head = getHead()[0]
+  head = getHead(gameData)[0]
   x_head = head[0]
   y_head = head[1]
   if(x_head <foodScanMax):
@@ -42,8 +42,8 @@ def food70( gameData):
   return
 
 
-def getHead(self):	
-  snakes = self.gameData ["snakes"]
+def getHead(gameData):	
+  snakes = gameData ["snakes"]
   for i in snakes:
     if snakes[i]["id"] == "2daa46ee-4880-4285-8572-eeaf52dba551":
       return snakes[i]["cords"][0],snakes[i]["cords"][1]
