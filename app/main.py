@@ -48,7 +48,7 @@ def move():
     else:
         nextMove = 'west'
     """
-    data['gameBoard'] = 
+    data['gameBoard'] =  gameBoardMatrix.GameBoard(data)
     return {
         'move': consume.food70(data),
         'taunt': consume.food70()
