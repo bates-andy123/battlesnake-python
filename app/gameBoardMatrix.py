@@ -1,4 +1,10 @@
-def GameBoard(game, mode, turn, height, width, snakes, food, walls, gold):
+def GameBoard(gameData):
+  height= gameData["height"]
+  width= gameData["width"]
+  snakes= gameData["snakes"]
+  food= gameData["food"]
+  walls= gameData["walls"]
+  gold= gameData["gold"]
   gameBoard = [['E' for x in range(height)] for x in range(width)] 
   #gameBoard[1][4] = 'E';
   for i in range(len(snakes)):
