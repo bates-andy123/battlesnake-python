@@ -17,6 +17,8 @@ class food40(object):
     self.data = data
     self.head = self.getHead()
     self.foodPos = self.getFood()
+    if foodPos == 0:
+      return 
     self.moves = self.getMoves()
     self.enSnakes = self.getEnemySnakes()
     self.enSnakeMoves = self.getEnSnakeMoves()
@@ -81,16 +83,16 @@ class food40(object):
     food_x = foodPos[item][0]
     food_y = foodPos[item][1]
     board = self.gameBoard
-    if board[head[0]+1][head[1]] != "W" or "S":
+    if board[head[0]+1][head[1]] != "W" or "S" or "I":
       if (head[0]+1) <= food_x:
         return "east"
-    if board[head[0]-1][head[1]] != "W" or "S":
+    if board[head[0]-1][head[1]] != "W" or "S" or "I":
       if (head[0]-1) >= food_x:
         return "west"
-    if board[head[0]][head[1]+1] != "W" or "S":
+    if board[head[0]][head[1]+1] != "W" or "S" or "I":
       if (head[1]+1) <= food_y:
         return "south"
-    if board[head[0]][head[1]-1] != "W" or "S":
+    if board[head[0]][head[1]-1] != "W" or "S" or "I":
       if (head[1]-1) >= food_y:
         return "north"
     else:
