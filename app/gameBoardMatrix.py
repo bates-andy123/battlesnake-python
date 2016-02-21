@@ -9,9 +9,9 @@ def GameBoard(gameData):
   #gameBoard[1][4] = 'E';
   for i in range(len(snakes)):
     for j in range(len(snakes[i]["coords"])):
-      x = snakes[i].coords[j]["coords"]
-      y = snakes[i].coords[j]["coords"]
-      if (snakes[i].id == '2daa46ee-4880-4285-8572-eeaf52dba551'):
+      x = snakes[i]["coords"][j][0]
+      y = snakes[i]["coords"][j][1]
+      if (snakes[i]["id"] == '2daa46ee-4880-4285-8572-eeaf52dba551'):
       	if (j == 0):
           gameBoard[x][y] = 'H'
       	else:
