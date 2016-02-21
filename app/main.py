@@ -34,19 +34,22 @@ def start():
 
 @bottle.post('/move')
 def move():
+    import consume
     global moves
     data = bottle.request.json
 
     # TODO: Do things with data
+    """
     nextMove = None
     if len(moves) > 0:
         nextMove = moves[0]
         moves = moves[1:]
     else:
         nextMove = 'west'
+    """
     return {
-        'move': nextMove,
-        'taunt': 'battlesnake-python!'
+        'move': consume.food70(data),
+        'taunt': consume.food70()
     }
 
 
