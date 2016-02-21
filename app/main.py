@@ -49,7 +49,9 @@ def move():
         nextMove = 'west'
     """
     data['gameBoard'] =  gameBoardMatrix.GameBoard(data)
-    print "looking for food"
+    print data
+    for i in range(len(data['snakes'])):
+        print data['snakes'][i]
     return {
         'move': consume.food70(data),
         'taunt': consume.food70(data)
