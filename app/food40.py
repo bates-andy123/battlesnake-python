@@ -12,7 +12,7 @@ class food40(object):
   #an array defining if own snake is the closest of all snakes to each food item
   closest = 0
 
-  def _init_(self, data, head, gameBoard):
+  def _init_(self, data, gameBoard):
     move = 0
     self.data = data
     self.head = self.getHead()
