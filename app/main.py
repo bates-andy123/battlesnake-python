@@ -1,6 +1,7 @@
 import bottle
 import os
 
+moves = []
 
 @bottle.route('/static/<path:path>')
 def static(path):
@@ -33,12 +34,18 @@ def start():
 
 @bottle.post('/move')
 def move():
+    global moves
     data = bottle.request.json
 
     # TODO: Do things with data
-
+    nextMove = None
+    if len(moves) > 0:
+        nextMove = moves[0]
+        moves = moves[1:]
+    else:
+        nextMove = 'west'
     return {
-        'move': 'north',
+        'move': nextMove,
         'taunt': 'battlesnake-python!'
     }
 
