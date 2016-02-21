@@ -1,5 +1,5 @@
 def food70( gameData):
-  foodScanMax = 2
+  foodScanMax = 200
   head = getHead(gameData)[0]
   x_head = head[0]
   y_head = head[1]
