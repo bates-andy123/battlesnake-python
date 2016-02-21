@@ -51,7 +51,7 @@ def move():
     data['gameBoard'] =  gameBoardMatrix.GameBoard(data)
     return {
         'move': consume.food70(data),
-        'taunt': consume.food70()
+        'taunt': consume.food70(data)
     }
 
 
