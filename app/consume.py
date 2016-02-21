@@ -1,4 +1,4 @@
-def food70(self, gameData):
+def food70( gameData):
   foodScanMax = 2
   head = getHead()[0]
   x_head = head[0]
