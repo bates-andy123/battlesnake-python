@@ -6,7 +6,10 @@ def GameBoard(game, mode, turn, height, width, snakes, food, walls, gold):
       x = snakes[i].coords[j][0]
       y = snakes[i].coords[j][1]
       if (snakes[i].id == '2daa46ee-4880-4285-8572-eeaf52dba551'):
-        gameBoard[x][y] = 'I'
+      	if (j == 0):
+          gameBoard[x][y] = 'H'
+      	else:
+          gameBoard[x][y] = 'I'
       else:
         gameBoard[x][y] = 'S'
   for i in range(len(food)):
