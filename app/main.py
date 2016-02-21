@@ -35,6 +35,7 @@ def start():
 @bottle.post('/move')
 def move():
     import consume
+    import gameBoardMatrix
     global moves
     data = bottle.request.json
 
@@ -47,6 +48,7 @@ def move():
     else:
         nextMove = 'west'
     """
+    data['gameBoard'] = 
     return {
         'move': consume.food70(data),
         'taunt': consume.food70()
