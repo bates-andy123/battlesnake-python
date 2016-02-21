@@ -26,10 +26,10 @@ def food70( gameData):
           if (variance <= foodScanMax):
             if(fabs(x_head - i) >= fabs(y_head - j)):
               if (x_head - i < 0):
-                if gameData.['gameBoard'][x_head-1][y_head] == "E":
+                if gameData['gameBoard'][x_head-1][y_head] == "E":
                   return "west"
               else:
-                if gameData.['gameBoard'][x_head+1][y_head] == "E":
+                if gameData['gameBoard'][x_head+1][y_head] == "E":
                   return "east"
 
             if(fabs(x_head - i) <= fabs(y_head - j)):
