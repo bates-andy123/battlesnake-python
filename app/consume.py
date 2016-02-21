@@ -44,6 +44,6 @@ def food70( gameData):
 
 def getHead(gameData):	
   snakes = gameData ["snakes"]
-  for i in snakes:
+  for i in range(len(snakes)):
     if snakes[i]["id"] == "2daa46ee-4880-4285-8572-eeaf52dba551":
       return snakes[i]["cords"][0],snakes[i]["cords"][1]
